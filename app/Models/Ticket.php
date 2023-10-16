@@ -12,7 +12,7 @@ class Ticket extends Model
     protected $table = 'tickets';
 
     protected $guarded = ['id'];
-    protected $fillable = ['price', 'concert_detail_id', 'catagory_id', 'transaction_id'];
+    protected $fillable = ['concert_detail_id', 'catagory_id', 'transaction_id'];
 
     public function concertDetail()
     {

@@ -12,7 +12,7 @@ class Transaction extends Model
     protected $table = 'transactions';
 
     protected $guarded = ['id'];
-    protected $fillable = ['date', 'total', 'user_id', 'payment_id'];
+    protected $fillable = ['date', 'total', 'user_id', 'payment_method_id'];
 
     public function paymentMethod()
     {
