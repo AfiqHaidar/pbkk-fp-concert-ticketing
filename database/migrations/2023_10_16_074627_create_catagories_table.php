@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('seat');
             $table->string('code');
             $table->unsignedDecimal('price', $precision = 10, $scale = 2);
+            $table->foreignId('concert_detail_id')->constrained();
             $table->foreignId('venue_id')->constrained();
             $table->timestamps();
         });

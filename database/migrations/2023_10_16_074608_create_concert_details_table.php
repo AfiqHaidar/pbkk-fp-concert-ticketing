@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('concert_details', function (Blueprint $table) {
             $table->id();
+            $table->date('date');
             $table->foreignId('concert_id')->constrained();
             $table->foreignId('venue_id')->constrained();
             $table->timestamps();

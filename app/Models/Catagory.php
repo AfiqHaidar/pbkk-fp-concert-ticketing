@@ -12,7 +12,12 @@ class Catagory extends Model
     protected $table = 'catagories';
 
     protected $guarded = ['id'];
-    protected $fillable = ['seat', 'code', 'price', 'venue_id'];
+    protected $fillable = ['seat', 'code', 'price', 'concert_detail_id', 'venue_id'];
+
+    public function concertDetail()
+    {
+        return $this->belongsTo(ConcertDetail::class);
+    }
 
     public function ticket()
     {
