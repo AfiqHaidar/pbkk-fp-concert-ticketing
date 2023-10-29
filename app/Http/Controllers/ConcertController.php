@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Models\Concert;
 use App\Models\ConcertDetail;
 use App\Models\Catagory;
+use App\Models\Ticket;
 
 class ConcertController extends Controller
 {
@@ -36,5 +37,16 @@ class ConcertController extends Controller
     {
         $cat = Catagory::where('concert_detail_id', $dtid)->get();
         return Inertia::render('Concert/Buy', ['cat' => $cat]);
+    }
+
+    public function store(Request $request)
+    {
+        $ticket = new Ticket;
+        $ticket->catagory_id = $request->input('selectedCategory');
+        $ticket->transaction_id = 1;
+        $ticket->save();
+
+        $concert = Concert::all();
+        return Inertia::render('Concert/Index', ['concerts' => $concert]);
     }
 }

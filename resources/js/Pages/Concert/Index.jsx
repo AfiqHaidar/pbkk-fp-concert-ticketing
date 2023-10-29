@@ -3,7 +3,7 @@ import { Head } from '@inertiajs/react';
 import { InertiaLink  } from '@inertiajs/inertia-react';
 
 
-export default function Index({ auth, concerts }) {
+export default function Index({ auth, concerts}) {
 
 
     return (
@@ -22,6 +22,8 @@ export default function Index({ auth, concerts }) {
                     </InertiaLink>
                 </div>
             ))}
+
+            
         </AuthenticatedLayout>
     );
 }
